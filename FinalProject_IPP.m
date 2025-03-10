@@ -98,6 +98,7 @@ for im_idx = 1:length(imlist)
     out = bwferet(CC,"all");
 
     % Generate excel sheet with major axis and minor axis information
-    writetable(stats,[outpath,outfile],'Sheet',im_idx,'Writemode','overwrite')
+    imname(imname == '-') = ' ';
+    writetable(stats,[outpath,outfile],'Sheet',imname(1:15),'Writemode','overwrite')
 
 end
